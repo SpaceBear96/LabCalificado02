@@ -22,7 +22,7 @@ import com.tecsup.spacebear.labcal02.models.Note;
 import java.util.ArrayList;
 import java.util.List;
 
-public class NoteAdapter {
+public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.ViewHolder> {
     private static final String TAG = NoteAdapter.class.getSimpleName();
 
     private List<Note> notes;
@@ -55,14 +55,14 @@ public class NoteAdapter {
         }
     }
 
-    @Override
+
     public NoteAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_note, parent, false);
         ViewHolder viewHolder = new ViewHolder(itemView);
         return viewHolder;
     }
 
-    @Override
+
     public void onBindViewHolder(NoteAdapter.ViewHolder viewHolder, final int position) {
         final Note note = this.notes.get(position);
 
@@ -104,6 +104,7 @@ public class NoteAdapter {
 
                                 // Eliminar item del recyclerView y notificar cambios
 //                                notes.remove(position);
+
                                 notifyItemRemoved(position);
                                 notifyItemRangeChanged(position, notes.size());
 
@@ -132,11 +133,10 @@ public class NoteAdapter {
 
     }
 
-    @Override
     public int getItemCount() {
         return this.notes.size();
     }
 
 }
 
-}
+

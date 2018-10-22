@@ -39,7 +39,7 @@ public class Inicio extends AppCompatActivity {
     }
 
     public void showRegister(View view){
-        startActivityForResult(new Intent(this, RegisterActivity.class), REGISTER_FORM_REQUEST);
+        startActivityForResult(new Intent(this, NRegisterActivity.class), REGISTER_FORM_REQUEST);
     }
 
     @Override

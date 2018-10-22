@@ -1,6 +1,6 @@
 package com.tecsup.spacebear.labcal02.models;
 
-import java.sql.Date;
+import java.util.Date;
 
 public class Note {
     private Long id;
